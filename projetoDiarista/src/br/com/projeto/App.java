@@ -1,5 +1,7 @@
 package br.com.projeto;
 
+
+import br.com.classes.Atendimento;
 import br.com.classes.Cliente;
 import br.com.classes.Diarista;
 
@@ -7,34 +9,55 @@ public class App {
 
 	public static void main(String[] args) {
 		
+		
 		Diarista diarista = new Diarista();
 		
-		diarista.nome = "João da Silva";
-		diarista.telefone = "(11) 98751-9885";
-		diarista.endereço = "Av Cajamar, N 111";
-		diarista.chavePix = "150";
+		diarista.setNome("João da Silva"); 
+		diarista.setTelefone("(11) 98757-7859");
+		diarista.setEndereco("Av Cajamar, N 111");
+		diarista.setChavePix("123"); 
 		
 		
-		System.out.println("NOME DIARISTA:" + diarista.nome);
-		System.out.println("TELEFONE DIARISTA:" + diarista.telefone);
-		System.out.println("ENDEREÇO DIARISTA:" + diarista.endereço);
-		System.out.println("CHAVE PIX DIARISTA:" + diarista.chavePix);
-		diarista.atender("Jóse");
+		System.out.println("Nome Diarista: " + diarista.getNome());
+		System.out.println("Telefone Diarista: " + diarista.getTelefone());
+		System.out.println("Endereço Diarista: " + diarista.getEndereco());
+		System.out.println("Chave Pix Diarista: " + diarista.getChavePix());
+		diarista.atender("Daniel");
+		System.out.println("Saldo Cliente: " + diarista.getSaldo());
+		diarista.depositar(30);
+		System.out.println("Novo Saldo: " + diarista.getSaldo());
+		diarista.sacar(10);
+		System.out.println("Saque:" + diarista.getSaldo());
 		
-		System.out.println("==================================");
+		
+		System.out.println("===============================================================");
 		
 		Cliente cliente = new Cliente();
 		
-		cliente.nome = "José";
-		cliente.telefone = "(11) 98557-6247";
-		cliente.endereço = "Av Cajamar, N 501";		
-		cliente.saldo = 1000.000;
+		cliente.setNome("Daniel");
+		cliente.setTelefone( "(11) 98568-8974"); 
+		cliente.setEndereco("Rua das Americas"); 
 		
-		System.out.println("NOME CLIENTE:" + cliente.nome);
-		System.out.println("TELEFONE CLIENTE:" + cliente.telefone);
-		System.out.println("ENDEREÇO CLIENETE:" + cliente.endereço);
-		System.out.println("SALDO CLIENETE:" + cliente.saldo);
+		
+		System.out.println("Nome Cliente: " + cliente.getNome());
+		System.out.println("Telefone Cliente: " + cliente.getTelefone());
+		System.out.println("Endereço Cliente: " + cliente.getEndereco());
+		System.out.println("Saldo Cliente: " + cliente.getSaldo());
+		cliente.depositar(30);
+		System.out.println("Novo Saldo: " + cliente.getSaldo());
+		cliente.sacar(20);
+		System.out.println("Saque: " + cliente.getSaldo());
+		
+		System.out.println("===============================================================");
+		
+		Atendimento atendimento = new Atendimento();
+		
+		atendimento.setHoras(13);
+		System.out.println(atendimento.getHoras());
+		
 		
 	}
+	
+	
 
 }
